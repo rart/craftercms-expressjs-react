@@ -21,7 +21,7 @@
   <cors>
     <enable>true</enable>
     <accessControlMaxAge>3600</accessControlMaxAge>
-    <accessControlAllowOrigin>*</accessControlAllowOrigin>
+    <accessControlAllowOrigin>sample.com</accessControlAllowOrigin>
     <accessControlAllowMethods>GET\, POST\, PUT\, OPTIONS</accessControlAllowMethods>
     <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
     <accessControlAllowCredentials>true</accessControlAllowCredentials>
