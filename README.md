@@ -2,7 +2,7 @@
 
 This is a sample Crafter CMS blueprint that demonstrates a multi-domain setup on Crafter CMS with a NodeJS server-side rendered React application which is later hydrated browser-side.
 
-It demonstrates fetching data/content from Crafter CMS both on the server-side and client-side (browser) and the interaction between SSR/hydration.
+It demonstrates fetching data/content from Crafter CMS both on the server-side and client-side (browser) and the interaction between SSR/hydration. In addition to data fetching, it demonstrates integrating Crafter CMS In-Context Editing into your React/SPA application. 
 
 It uses Redux to help with the app state and hydration. 
 
