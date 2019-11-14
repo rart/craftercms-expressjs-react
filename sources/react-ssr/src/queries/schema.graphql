@@ -1,0 +1,759 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: craftercms_site
+}
+
+"Interface for all content items (pages, components and taxonomies)"
+interface ContentItem {
+  "The content type of the item"
+  content__type(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The created date of the item"
+  createdDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The name/label of the item in Authoring (can also be used as a navigation label in Delivery)"
+  internal__name(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The last modified date of the item"
+  lastModifiedDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The path of the item"
+  localId(
+    #Values used to filter the results
+    filter: StringFilters,
+    #The name of the transformer to apply
+    transform: String
+  ): String
+  "The objectGroupId for the item"
+  objectGroupId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The objectId of the item"
+  objectId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+}
+
+"Interface for pages"
+interface Page {
+  "The content type of the item"
+  content__type(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The created date of the item"
+  createdDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The name/label of the item in Authoring (can also be used as a navigation label in Delivery)"
+  internal__name(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The last modified date of the item"
+  lastModifiedDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The path of the item"
+  localId(
+    #Values used to filter the results
+    filter: StringFilters,
+    #The name of the transformer to apply
+    transform: String
+  ): String
+  "The label of the page in the navigation"
+  navLabel(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The objectGroupId for the item"
+  objectGroupId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The objectId of the item"
+  objectId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The order the page has in the navigation"
+  orderDefault_f(
+    #Values used to filter the results
+    filter: FloatFilters
+  ): Float
+  "If the page should be placed in the navigation"
+  placeInNav(
+    #Values used to filter the results
+    filter: BooleanFilters
+  ): Boolean
+}
+
+"Item: Company"
+type component_company implements ContentItem {
+  "The content type of the item"
+  content__type(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The created date of the item"
+  createdDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "Description"
+  description_html(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "Description"
+  description_html_raw: String
+  "Disable Item"
+  disabled(
+    #Values used to filter the results
+    filter: BooleanFilters
+  ): Boolean
+  "Email"
+  email_s(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "Component ID"
+  file__name(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "The name/label of the item in Authoring (can also be used as a navigation label in Delivery)"
+  internal__name(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The last modified date of the item"
+  lastModifiedDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The path of the item"
+  localId(
+    #Values used to filter the results
+    filter: StringFilters,
+    #The name of the transformer to apply
+    transform: String
+  ): String
+  "Logo"
+  logo_s(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "Name"
+  name_s(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The objectGroupId for the item"
+  objectGroupId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The objectId of the item"
+  objectId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "Phone"
+  phone_s(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "Website"
+  website_s(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+}
+
+"Query for content-type /component/company"
+type component_company_query {
+  "List of items"
+  items: [component_company!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Section Defaults"
+type component_level__descriptor implements ContentItem {
+  "The content type of the item"
+  content__type(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The created date of the item"
+  createdDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "File Name"
+  file__name(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "The name/label of the item in Authoring (can also be used as a navigation label in Delivery)"
+  internal__name(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The last modified date of the item"
+  lastModifiedDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The path of the item"
+  localId(
+    #Values used to filter the results
+    filter: StringFilters,
+    #The name of the transformer to apply
+    transform: String
+  ): String
+  "The objectGroupId for the item"
+  objectGroupId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The objectId of the item"
+  objectId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+}
+
+"Query for content-type /component/level-descriptor"
+type component_level__descriptor_query {
+  "List of items"
+  items: [component_level__descriptor!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Item: Product"
+type component_product implements ContentItem {
+  "Categories"
+  categories_o: component_product_categories_o_items
+  "Company"
+  company_o: component_product_company_o_items
+  "The content type of the item"
+  content__type(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The created date of the item"
+  createdDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "Description"
+  description_html(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "Description"
+  description_html_raw: String
+  "Disable Item"
+  disabled(
+    #Values used to filter the results
+    filter: BooleanFilters
+  ): Boolean
+  "Component ID"
+  file__name(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "Image"
+  image_s(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The name/label of the item in Authoring (can also be used as a navigation label in Delivery)"
+  internal__name(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The last modified date of the item"
+  lastModifiedDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The path of the item"
+  localId(
+    #Values used to filter the results
+    filter: StringFilters,
+    #The name of the transformer to apply
+    transform: String
+  ): String
+  "Name"
+  name_s(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The objectGroupId for the item"
+  objectGroupId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The objectId of the item"
+  objectId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "Price"
+  price_d(
+    #Values used to filter the results
+    filter: FloatFilters
+  ): Float
+  "Tags"
+  tags_o: component_product_tags_o_items
+}
+
+"Item for field categories_o"
+type component_product_categories_o_item {
+  "The key of the item"
+  key(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "The value of the item"
+  value(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+}
+
+"Wrapper for field categories_o"
+type component_product_categories_o_items {
+  "List of items for field categories_o"
+  item: [component_product_categories_o_item]
+}
+
+"Contains the data from another item in the site"
+type component_product_company_o_flattened_item {
+  "The content of the item"
+  component: component_company!
+  "The path of the item"
+  key: String!
+  "The name of the item"
+  value: String!
+}
+
+"Wrapper for flattened items"
+type component_product_company_o_items {
+  "List of flattened items"
+  item: [component_product_company_o_flattened_item!]
+}
+
+"Query for content-type /component/product"
+type component_product_query {
+  "List of items"
+  items: [component_product!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Item for field tags_o"
+type component_product_tags_o_item {
+  "The key of the item"
+  key(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "The value of the item"
+  value_smv(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+}
+
+"Wrapper for field tags_o"
+type component_product_tags_o_items {
+  "List of items for field tags_o"
+  item: [component_product_tags_o_item]
+}
+
+"Query for all components"
+type components_query {
+  "List of items"
+  items: [ContentItem!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Query for all content items"
+type contentItems_query {
+  "List of items"
+  items: [ContentItem!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Provides access to all site content"
+type craftercms_site {
+  "Items of content-type /component/company"
+  component_company(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): component_company_query!
+  "Items of content-type /component/level-descriptor"
+  component_level__descriptor(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): component_level__descriptor_query!
+  "Items of content-type /component/product"
+  component_product(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): component_product_query!
+  "All components"
+  components(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): components_query!
+  "All content items"
+  contentItems(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): contentItems_query!
+  "Items of content-type /page/catalog"
+  page_catalog(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): page_catalog_query!
+  "All pages"
+  pages(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): pages_query!
+  "Items of content-type /taxonomy"
+  taxonomy(
+    #The number of items to return
+    limit: Int,
+    #The number of items to skip
+    offset: Int,
+    #The name of the field to sort items
+    sortBy: String,
+    #The order to sort items
+    sortOrder: SortOrder
+  ): taxonomy_query!
+}
+
+"Catalog"
+type page_catalog implements ContentItem & Page {
+  "The content type of the item"
+  content__type(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The created date of the item"
+  createdDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "Disable Catalog"
+  disabled(
+    #Values used to filter the results
+    filter: BooleanFilters
+  ): Boolean
+  "Page URL"
+  file__name(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "The name/label of the item in Authoring (can also be used as a navigation label in Delivery)"
+  internal__name(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The last modified date of the item"
+  lastModifiedDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The path of the item"
+  localId(
+    #Values used to filter the results
+    filter: StringFilters,
+    #The name of the transformer to apply
+    transform: String
+  ): String
+  "The label of the page in the navigation"
+  navLabel(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "The objectGroupId for the item"
+  objectGroupId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The objectId of the item"
+  objectId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The order the page has in the navigation"
+  orderDefault_f(
+    #Values used to filter the results
+    filter: FloatFilters
+  ): Float
+  "If the page should be placed in the navigation"
+  placeInNav(
+    #Values used to filter the results
+    filter: BooleanFilters
+  ): Boolean
+  "Title"
+  title_t(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+}
+
+"Query for content-type /page/catalog"
+type page_catalog_query {
+  "List of items"
+  items: [page_catalog!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Query for all pages"
+type pages_query {
+  "List of items"
+  items: [Page!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Taxonomy"
+type taxonomy implements ContentItem {
+  "The content type of the item"
+  content__type(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The created date of the item"
+  createdDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "Component ID"
+  file__name(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "The name/label of the item in Authoring (can also be used as a navigation label in Delivery)"
+  internal__name(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String
+  "Items"
+  items: taxonomy_items_items
+  "The last modified date of the item"
+  lastModifiedDate_dt(
+    #Values used to filter the results
+    filter: DateFilters
+  ): DateTime!
+  "The path of the item"
+  localId(
+    #Values used to filter the results
+    filter: StringFilters,
+    #The name of the transformer to apply
+    transform: String
+  ): String
+  "The objectGroupId for the item"
+  objectGroupId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+  "The objectId of the item"
+  objectId(
+    #Values used to filter the results
+    filter: StringFilters
+  ): String!
+}
+
+"Item for repeat group of items"
+type taxonomy_items_item {
+  "Key"
+  key(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+  "Value"
+  value(
+    #Values used to filter the results
+    filter: TextFilters
+  ): String
+}
+
+"Wrapper for list of items of items"
+type taxonomy_items_items {
+  "List of items of items"
+  item: [taxonomy_items_item]
+}
+
+"Query for content-type /taxonomy"
+type taxonomy_query {
+  "List of items"
+  items: [taxonomy!]
+  "Total number of items found"
+  total: Int!
+}
+
+"Possible values for sorting"
+enum SortOrder {
+  ASC
+  DESC
+}
+
+"Filters applicable for 'boolean' fields"
+input BooleanFilters {
+  "Combines the list of filters using the AND operator"
+  and: [BooleanFilters!]
+  "Search for the given value"
+  equals: Boolean
+  "Search if field exists or not (a field exists if it has a non-null value)"
+  exists: Boolean
+  "Combines the list of filters using the NOT operator"
+  not: [BooleanFilters!]
+  "Combines the list of filters using the OR operator"
+  or: [BooleanFilters!]
+}
+
+"Filters applicable for 'datetime' fields"
+input DateFilters {
+  "Combines the list of filters using the AND operator"
+  and: [DateFilters!]
+  "Search if field exists or not (a field exists if it has a non-null value)"
+  exists: Boolean
+  "Search for values greater than the given value"
+  gt: DateTime
+  "Search for values greater than or equal to the given value"
+  gte: DateTime
+  "Search for values less than the given value"
+  lt: DateTime
+  "Search for values less than or equal to the given value"
+  lte: DateTime
+  "Combines the list of filters using the NOT operator"
+  not: [DateFilters!]
+  "Combines the list of filters using the OR operator"
+  or: [DateFilters!]
+}
+
+"Filters applicable for 'float' fields"
+input FloatFilters {
+  "Combines the list of filters using the AND operator"
+  and: [FloatFilters!]
+  "Search for the given value"
+  equals: Float
+  "Search if field exists or not (a field exists if it has a non-null value)"
+  exists: Boolean
+  "Search for values greater than the given value"
+  gt: Float
+  "Search for values greater than or equal to the given value"
+  gte: Float
+  "Search for values less than the given value"
+  lt: Float
+  "Search for values less than or equal to the given value"
+  lte: Float
+  "Combines the list of filters using the NOT operator"
+  not: [FloatFilters!]
+  "Combines the list of filters using the OR operator"
+  or: [FloatFilters!]
+}
+
+"Filters for 'string' fields"
+input StringFilters {
+  "Combines the list of filters using the AND operator"
+  and: [StringFilters!]
+  "Search for exact matches"
+  equals: String
+  "Search if field exists or not (a field exists if it has a non-null value)"
+  exists: Boolean
+  "Combines the list of filters using the NOT operator"
+  not: [StringFilters!]
+  "Combines the list of filters using the OR operator"
+  or: [StringFilters!]
+  "Search for a regex"
+  regex: String
+}
+
+"Filters for 'text' fields"
+input TextFilters {
+  "Combines the list of filters using the AND operator"
+  and: [TextFilters!]
+  "Search if field exists or not (a field exists if it has a non-null value)"
+  exists: Boolean
+  "Search for terms in the text"
+  matches: String
+  "Combines the list of filters using the NOT operator"
+  not: [TextFilters!]
+  "Combines the list of filters using the OR operator"
+  or: [TextFilters!]
+  "Search for a regex"
+  regex: String
+}
+
+
+"An RFC-3339 compliant DateTime Scalar"
+scalar DateTime

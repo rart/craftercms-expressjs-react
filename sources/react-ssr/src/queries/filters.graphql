@@ -1,0 +1,33 @@
+query getFilters {
+  companies: component_company(sortBy: "name_s", sortOrder: ASC) {
+    items {
+      objectId
+      name_s
+      logo_s
+      website_s
+      description_html_raw
+    }
+  }
+  categories: taxonomy {
+    items {
+      localId(filter:{regex:".*categories.*"})
+      items {
+        item {
+          key
+          value
+        }
+      }
+    }
+  }
+  tags: taxonomy {
+    items {
+      localId(filter:{regex:".*tags.*"})
+      items {
+        item {
+          key
+          value
+        }
+      }
+    }
+  }
+}

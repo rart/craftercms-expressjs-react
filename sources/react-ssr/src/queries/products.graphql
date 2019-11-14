@@ -1,0 +1,30 @@
+query getProducts($offset: Int, $limit: Int, $company: String, $category: String, $tag: String) {
+  products: component_product(offset: $offset, limit: $limit) {
+    total
+    items {
+      localId
+      name_s
+      description_html_raw
+      price_d
+      image_s
+      categories_o {
+        item {
+          key(filter:{ matches: $category })
+        }
+      }
+      tags_o {
+        item {
+          key(filter:{ matches: $tag })
+        }
+      }
+      company_o {
+        item {
+          component {
+            objectId(filter:{ regex: $company })
+            name_s
+          }
+        }
+      }
+    }
+  }
+}
