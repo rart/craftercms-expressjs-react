@@ -12,6 +12,15 @@ It uses Redux to help with the app state and hydration.
 4. Run the express server by going into {siteRoot}/sources/react-ssr and running `npm install` followed by `npm run start`. Then, go to `preview.sample.com:3000` to see the Express app. This URL will only work if you previously and successfully configured your `/etc/hosts` file, of course.
 5. Navigate/reload to Preview on Crafter CMS and you should see the site.
 
+## What you see
+
+Once you've completed the setup and have the site up and running, you can see a initial render with the catalog products. These are fetched server side and then hydrated by ReactDOM once the page loads.
+
+If you click the pagination links, you see the second page coming without page refreshing. The page data is fetched asynchronously by React using the GraphQL endpoint in Crafter CMS. 
+
+**ICE**
+
+If you click the pencil icon on Crafter's top toolbar (In-Context Editing), you should see pencils showing up on each product. Clicking a pencil would open that content entry for editing on the CMS.
 
 ## Hosts File Example
 
