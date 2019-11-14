@@ -8,7 +8,7 @@ It uses Redux to help with the app state and hydration.
 
 1. Download, build and start [Crafter CMS](https://github.com/craftercms/craftercms).
 2. While the build is running, use this time to go to your `/etc/hosts` file and add `authoring.sample.com` and `preview.sample.com` to your loopback alias entries. This will allow showcasing how things could work on a real deployment with different domain names.
-3. On Crafter CMS, use the "Create site dialog" > "Remote Git Repository" option to create your site based on this repo. Name it **headless-ssr-store**.
+3. On Crafter CMS, use the "Create site dialog" > "Remote Git Repository" option to create your site based on this repo. Name it **headless-ssr-store**. Note that right after creating the site, you may see a 404 on Preview since your Express app is not running yet.
 4. Run the express server by going into {siteRoot}/sources/react-ssr and running `npm install` followed by `npm run start`. Then, go to `preview.sample.com:3000` to see the Express app. This URL will only work if you previously and successfully configured your `/etc/hosts` file, of course.
 5. Navigate/reload to Preview on Crafter CMS and you should see the site.
 
