@@ -16,7 +16,11 @@ It uses Redux to help with the app state and hydration.
 
 Once you've completed the setup and have the site up and running, you can see a initial render with the catalog products. These are fetched server side and then hydrated by ReactDOM once the page loads.
 
-If you click the pagination links, you see the second page coming without page refreshing. The page data is fetched asynchronously by React using the GraphQL endpoint in Crafter CMS. 
+If you click the pagination links, you see the second page coming without page refreshing. The page data is fetched asynchronously by React using the GraphQL endpoint in Crafter CMS.
+
+Content fetching is shown in two ways:
+- GraphQL, both server-side and client-side - see `sources/react-ssr/server/render.js` and `sources/react-ssr/src/components/App.js`.
+- Content SDK - see `sources/react-ssr/src/components/App.js`. This is just shown client side but can be used in the same way server side.
 
 **ICE**
 

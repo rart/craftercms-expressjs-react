@@ -5,13 +5,25 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import ProductCard from './ProductCard';
 import query from '../queries/products.graphql';
-import { enableICE, GRAPHQL_URL } from '../util';
+import { crafterConfig, enableICE, GRAPHQL_URL } from '../util';
+import { ContentStoreService } from '@craftercms/content';
 
 class App extends React.Component {
 
+  state = {
+    title: 'Store Catalog'
+  };
+
   componentDidMount() {
+
     if (this.props.isAuthoring)
       enableICE();
+
+    ContentStoreService.getDescriptor('/site/website/index.xml', crafterConfig)
+      .subscribe(({ page: { title_t } }) => {
+        this.setState({ title: title_t });
+      });
+
   }
 
   loadPage(pageIndex) {
@@ -37,7 +49,7 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <h1 className="page-title">Store Catalog</h1>
+        <h1 className="page-title">{this.state.title}</h1>
         <hr/>
         <section className="product-listing">
           <div className="row">

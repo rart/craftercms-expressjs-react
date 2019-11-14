@@ -1,3 +1,4 @@
+import { crafterConf } from '@craftercms/classes';
 
 let iceRepaintTimeout;
 
@@ -42,3 +43,9 @@ export function useICE({ modelId, label = '' }) {
     }
   };
 }
+
+export const crafterConfig = {
+  ...crafterConf.getConfig(),
+  baseUrl: CRAFTER_BASE,
+  site: 'headless-ssr-store'
+};
