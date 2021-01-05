@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@craftercms/content": "^1.1.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-core": "^6.26.0",
     "express": "^4.16.2",
     "raw-loader": "^3.1.0",
